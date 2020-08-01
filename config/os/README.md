@@ -1,6 +1,6 @@
 # How to install Ubuntu 20.04 LTS (Focal Fossa) Server
 
-In this document we will perform Ubuntu 20.04 LTS (Focal Fossa) Server installation. I have used [VirtualBox](https://www.virtualbox.org/) as part of my learning and documented the same. 
+In this document we will perform Ubuntu 20.04 LTS (Focal Fossa) Server installation. I have used [VirtualBox](https://www.virtualbox.org/) as part of my learning and documented the same.
 
 ## Prerequisite
 * [Ubuntu 20.04 LTS Focal Fossa ISO](https://cloud-images.ubuntu.com/focal/current/)
@@ -51,7 +51,7 @@ I choose to update the new installer and continue
 
 ![Profile](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__10.png)
 
-### Step 11 - Import Github SSH identify 
+### Step 11 - Import Github SSH identify
 
 ![Github](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__11.png)
 
@@ -59,7 +59,7 @@ I choose to update the new installer and continue
 
 ![Confirm SSH](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__12.png)
 
-### Step 13 - Select Microk8s 
+### Step 13 - Select Microk8s
 
 This is an important step, I decieded to use Microk8s as it is native to ubuntu
 
