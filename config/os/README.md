@@ -7,30 +7,66 @@ In this document we will perform Ubuntu 20.04 LTS (Focal Fossa) Server installat
 
 ## Steps to Install Ubuntu 20.04 LTS Focal Fossa
 
-### Step 1
+I have allocated 4 GB ram and dynamic storage allocation, booted the machine with ISO downloaded. Following are screenshots step by step of installation
 
-### Step 2
+### Step 1 - Select Language
 
-### Step 3
+![Language Selection](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__01.png)
 
-### Step 4
+### Step 2 - Start Installer
 
-### Step 5
+I choose to update the new installer and continue
 
-### Step 6
+![Select Installer](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__02.png)
 
-### Step 7
+### Step 3 - Keyboard selection
 
-### Step 8
+![Select Keyboard](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__03.png)
 
-### Step 9
+### Step 4 - Select your network
 
-### Step 10
+![Network selection](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__04.png)
 
-### Step 11
+### Step 5 - Skip proxy unless you are using a proxy
 
-### Step 12
+![Proxy](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__05.png)
 
-### Step 13
+### Step 6 - Configure Mirror
 
-### Step 14
+![Mirror](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__06.png)
+
+### Step 7 - Select Storage
+
+![Storage](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__07.png)
+
+### Step 8 - Confirm storage summary
+
+![Storage](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__08.png)
+
+### Step 9 - Confirm storage configuration
+
+![Storage](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__09.png)
+
+### Step 10 - Setup Profile
+
+![Profile](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__10.png)
+
+### Step 11 - Import Github SSH identify 
+
+![Github](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__11.png)
+
+### Step 12 - Confirm SSH
+
+![Confirm SSH](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__12.png)
+
+### Step 13 - Select Microk8s 
+
+This is an important step, I decieded to use Microk8s as it is native to ubuntu
+
+![Microk8s](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__13.png)
+
+### Step 14 - Rebooot
+
+![Reboot](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__14.png)
+
+End of installation.
