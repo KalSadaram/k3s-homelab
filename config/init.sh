@@ -17,8 +17,8 @@ install_Flux_and_GitHub(){
   "create flux namespace"
   kubectl apply -f "$REPO_ROOT"/deployments/flux/namespace.yaml
 
-  helm upgrade --install flux --values "$REPO_ROOT"/deployments/flux/flux-values.yaml --namespace flux fluxcd/flux
-  helm upgrade --install helm-operator --values "$REPO_ROOT"/deployments/helm-operator/flux-helm-operator-values.yaml --namespace flux fluxcd/helm-operator
+  helm upgrade --install flux --values "$REPO_ROOT"/deployments/flux/flux-values.yaml --namespace flux fluxcd/flux --kubeconfig /etc/rancher/k3s/k3s.yaml
+  helm upgrade --install helm-operator --values "$REPO_ROOT"/deployments/helm-operator/flux-helm-operator-values.yaml --namespace flux fluxcd/helm-operator --kubeconfig /etc/rancher/k3s/k3s.yaml
 
   FLUX_READY=1
   while [ $FLUX_READY != 0 ]; do
