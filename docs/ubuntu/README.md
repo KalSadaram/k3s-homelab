@@ -59,9 +59,9 @@ I choose to update the new installer and continue
 
 ![Confirm SSH](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__12.png)
 
-### Step 13 - Select Microk8s
+### Step 13 - Do not select any packages
 
-This is an important step, I decieded to use Microk8s as it is native to ubuntu
+This is an important step, do not use microk8s or any other add-ons
 
 ![Microk8s](https://github.com/KalSadaram/ks3-homelab/blob/master/docs/img/ucoi/ucoi__13.png)
 

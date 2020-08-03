@@ -1,0 +1,45 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flux
+  namespace: flux
+  annotations:
+    fluxcd.io/automated: "false"
+    fluxcd.io/tag.chart-image: semver:~1.14
+spec:
+  releaseName: flux
+  helmVersion: v3
+  chart:
+    repository: https://charts.fluxcd.io/
+    name: flux
+    version: 1.4.0
+  valuesFrom:
+  - externalSourceRef:
+      url: https://raw.githubusercontent.com/kalsadaram/ks3-homelab/master/deployments/flux/flux-values.yaml
+helmOperator:
+  create: false
+git:
+  url: "git@github.com:kalsadaram/ks3-homelab"
+image:
+  repository: docker.io/fluxcd/flux
+  tag: 1.20.0
+registry:
+  rps: 50
+  burst: 50
+memcached:
+  tolerations:
+  - key: "arm"
+    operator: "Exists"
+additionalArgs:
+- --connect=ws://fluxcloud
+prometheus:
+  enabled: true
+  serviceMonitor:
+    create: true
+    interval: 30s
+    scrapeTimeout: 10s
+    namespace: flux
+syncGarbageCollection:
+  enabled: true
+  dry: false
