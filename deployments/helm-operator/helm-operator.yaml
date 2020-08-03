@@ -13,4 +13,4 @@ spec:
     version: 1.1.0
   valuesFrom:
   - externalSourceRef:
-      url: https://raw.githubusercontent.com/kalsadaram/ks3-homelab/master/deployments/helm-operator/flux-helm-operator-values.yaml
+      url: https://raw.githubusercontent.com/kalsadaram/k3s-homelab/master/deployments/helm-operator/flux-helm-operator-values.yaml

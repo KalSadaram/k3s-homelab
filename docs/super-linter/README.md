@@ -12,4 +12,4 @@ Steps I documented below are my local setup and should not be used followed as i
 docker pull github/super-linter:latest
 
 ### Run docker
-docker run -e RUN_LOCAL=true -v /Users/sadaram/Documents/02.Projects/netlabs/ks3-homelab:/tmp/lint github/super-linter
+docker run -e RUN_LOCAL=true -v /Users/sadaram/Documents/02.Projects/netlabs/k3s-homelab:/tmp/lint github/super-linter

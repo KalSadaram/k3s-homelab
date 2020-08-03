@@ -16,11 +16,11 @@ spec:
     version: 1.4.0
   valuesFrom:
   - externalSourceRef:
-      url: https://raw.githubusercontent.com/kalsadaram/ks3-homelab/master/deployments/flux/flux-values.yaml
+      url: https://raw.githubusercontent.com/kalsadaram/k3s-homelab/master/deployments/flux/flux-values.yaml
 helmOperator:
   create: false
 git:
-  url: "git@github.com:kalsadaram/ks3-homelab"
+  url: "git@github.com:kalsadaram/k3s-homelab"
 image:
   repository: docker.io/fluxcd/flux
   tag: 1.20.0

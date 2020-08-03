@@ -1,3 +1,3 @@
 # Light-weight CI/CD k3s Implementation
-ks3-homelab
+k3s-homelab
 Managing Home Infra with GitOps [MicroK8S, Helm releases with Flux Help Operator]
