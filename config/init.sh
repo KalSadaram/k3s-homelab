@@ -2,6 +2,10 @@
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
+need() {
+    which "$1" &>/dev/null || die "Binary '$1' is missing but required"
+}
+
 need "kubectl"
 need "helm"
 
@@ -31,3 +35,5 @@ install_Flux_and_GitHub(){
   "$REPO_ROOT"/config/github/add-repo-key.sh "$FLUX_KEY"
 
 }
+
+install_Flux_and_GitHub
