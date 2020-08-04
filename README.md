@@ -2,7 +2,7 @@
 k3s-homelab
 Managing Home Infra with GitOps [MicroK8S, Helm releases with Flux Help Operator]
 
-This repo is a mirror of !(k8s-gitops)(https://github.com/kalsadaram/k3s-homelab)
+This repo is a mirror of ![k8s-gitops](https://github.com/kalsadaram/k3s-homelab)
 
 Leverage [Flux](https://github.com/fluxcd/flux) to automate cluster state using code residing in this repo
 
