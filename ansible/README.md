@@ -34,7 +34,7 @@ Note: Must `sudo chmod a+w /usr/local/bin` for some reason still. Fails on downl
 3. Clone github repo to home directory
    ```
    cd ~
-   git clone https://github.com/kalsadaram/k8s-gitops
+   git clone https://github.com/kalsadaram/k3s-homelab
    ```
 4. Install Ansible Galaxy requirements (Want to add ZSH stuff here once I get this working as is)
 

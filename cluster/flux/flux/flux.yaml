@@ -16,4 +16,4 @@ spec:
     version: 1.19.0
   valuesFrom:
   - externalSourceRef:
-      url: https://raw.githubusercontent.com/kalsadaram/k8s-gitops/master/cluster/flux/flux/flux-values.yaml
+      url: https://raw.githubusercontent.com/kalsadaram/k3s-homelab/master/cluster/flux/flux/flux-values.yaml
