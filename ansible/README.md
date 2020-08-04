@@ -39,12 +39,12 @@ Note: Must `sudo chmod a+w /usr/local/bin` for some reason still. Fails on downl
 4. Install Ansible Galaxy requirements (Want to add ZSH stuff here once I get this working as is)
 
    ```
-   cd ~/k8s-gitops/ansible
+   cd ~/k3s-homelab/ansible
    ansible-galaxy install -r requirements.yml
    ```
 5. Set up Ansible vault (applies to only inital installs)
    ```
-   ansible-vault encrypt ~/k8s-gitops/ansible/group_vars/vault/encrypted-vault.yml
+   ansible-vault encrypt ~/k3s-homelab/ansible/group_vars/vault/encrypted-vault.yml
    ```
    Node: I am not sure what the recovery/root token are for yet.
 
@@ -57,13 +57,13 @@ Note: Must `sudo chmod a+w /usr/local/bin` for some reason still. Fails on downl
 7. Run ansible main.yml (-K option is for BECOME password on remote server)
    Note: Must be in ansible directory for ansible to automatically pick up the hosts.yml file
    ```
-   cd ~/k8s-gitops/ansible/
+   cd ~/k3s-homelab/ansible/
    ansible-playbook main.yml -K --private-key=~/.ssh/id_rsa
    ```
 
    Or, if you do not have SSH keys, a lowercase -k option to set SSH password
    ```
-   cd ~/k8s-gitops/ansible/
+   cd ~/k3s-homelab/ansible/
    ansible-playbook main.yml -k -K
    ```
 
