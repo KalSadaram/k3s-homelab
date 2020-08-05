@@ -1,0 +1,42 @@
+- name: Set Timezone
+  timezone:
+    name: "{{ timezone | default('Australia/Brisbane') }}"
+
+- name: Disable SWAP
+  shell: |
+    swapoff -a
+
+# Install GIT
+- name: Install Git
+  apt:
+    name: git
+    state: present
+    update_cache: yes
+
+
+# src: https://github.com/onedr0p/k3s-gitops/blob/master/ansible/main.yml
+# ref: https://docs.ansible.com/ansible/latest/modules/apt_module.html
+  - name: Upgrade system
+    apt:
+      upgrade: dist
+      # Need the force_apt_get until
+      # https://github.com/ansible/ansible/issues/56832
+      force_apt_get: true
+    register: apt_upgrade
+    retries: 5
+    until: apt_upgrade is success
+    tags:
+      - upgrade_system
+
+  - name: Upgrade all packages to the latest version
+    apt:
+      name: "*"
+      state: latest
+      # Need the force_apt_get until
+      # https://github.com/ansible/ansible/issues/56832
+      force_apt_get: true
+    register: apt_update
+    retries: 5
+    until: apt_update is success
+    tags:
+      - upgrade_packages

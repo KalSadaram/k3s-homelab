@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - include_role:
+        name: pre-reqs
+      tags:
+        - pre-req
+    - include_role:
+        name: system
+      tags:
+        - system
+
+    - name: Rebooting hosts
+      reboot:
+        msg: "Systems are being rebooted"
+        reboot_timeout: 60
+      ignore_errors: true

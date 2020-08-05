@@ -1,0 +1,10 @@
+---
+
+- hosts: k3s_nodes
+  vars:
+   k3s_control_node_address: netlab.com.au
+   k3s_cluster_domain: netlab.com.au
+   k3s_cluster_cidr: 192.168.10.0/16
+   k3s_service_cidr: 192.168.20.0/16
+  roles:
+     - { role: xanmanning.k3s, k3s_release_version: v0.10.2 }
