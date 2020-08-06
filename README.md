@@ -3,8 +3,8 @@ k3s-homelab
 Managing Home Infra with GitOps [MicroK8S, Helm releases with Flux Help Operator]
 
 # GOAL
-* Single Cluster on Intel Nuc
-* Ansible for inital setup
+* Single Cluster on Intel Nuc ✅
+* Ansible for inital setup ✅
 * Flux & Help Operator Setup
 
 Start Over :-)
