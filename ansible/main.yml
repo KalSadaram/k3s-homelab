@@ -17,3 +17,5 @@
         - system
     - include_role:
         name: k3s
+    - include_role:
+        name: git

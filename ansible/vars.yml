@@ -8,3 +8,5 @@ systemd_dir: /etc/systemd/system
 master_ip: "{{ hostvars[groups['k3s_master'][0]]['ansible_host'] | default(groups['k3s_master'][0]) }}"
 extra_server_args: ""
 extra_agent_args: ""
+k3s_git_install_path: /home/sadaram
+k3s_homelab_path: /home/sadaram/k3s_homelab
