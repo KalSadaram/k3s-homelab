@@ -2,7 +2,11 @@
 k3s-homelab
 Managing Home Infra with GitOps [MicroK8S, Helm releases with Flux Help Operator]
 
-https://github.com/rancher/k3s-ansible
+# GOAL
+* Single Cluster on Intel Nuc
+* Ansible for inital setup
+* Flux & Help Operator Setup
+
 Start Over :-)
 
 # Step 1 - Setup-up Ansible
@@ -13,6 +17,19 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 
 
+# Step 2 - Update following files
+
+## Update
+
+# Step 3 - Run Ansible playbook
+sudo ansible-playbook main.yml -i inventory -kK --check
+
+SSH password: = k
+BECOME password = -K
+
 # Inspired by below repo's
 ![https://github.com/rancher/k3s-ansible](https://github.com/rancher/k3s-ansible)
+
 ![https://github.com/onedr0p/k3s-gitops](https://github.com/onedr0p/k3s-gitops)
+
+

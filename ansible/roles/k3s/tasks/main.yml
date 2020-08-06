@@ -1,0 +1,7 @@
+- name: Install K3s
+  shell: curl -sfL https://get.k3s.io | sh -
+  args:
+    warn: no
+
+- name: Cluster access
+  shell: export KUBECONFIG=/etc/rancher/k3s/k3s.yaml

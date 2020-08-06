@@ -1,3 +1,10 @@
 ansible_user: "sadaram"
-
+ansible_become: yes
+ansible_become_method: sudo
+ansible_python_interpreter: '/usr/bin/env python3'
 timezone: "Australia/Brisbane"
+k3s_version: v1.17.5+k3s1
+systemd_dir: /etc/systemd/system
+master_ip: "{{ hostvars[groups['k3s_master'][0]]['ansible_host'] | default(groups['k3s_master'][0]) }}"
+extra_server_args: ""
+extra_agent_args: ""
