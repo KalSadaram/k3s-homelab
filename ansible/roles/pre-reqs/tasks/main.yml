@@ -1,3 +1,5 @@
+---
+
 - name: Set Timezone
   timezone:
     name: "{{ timezone | default('Australia/Brisbane') }}"
@@ -6,16 +8,11 @@
   shell: |
     swapoff -a
 
-
-
 - name: Upgrade all packages to the latest version
   apt:
     name: "*"
     state: latest
 
-- name: Check if a reboot is needed on all servers
-  register: reboot_required_file
-  stat: path=/var/run/reboot-required get_md5=no
 
 - name: Enable IPv4 forwarding
   sysctl:
@@ -23,12 +20,6 @@
     value: "1"
     state: present
     reload: yes
-
-- name: Update apt repo and cache on all Debian/Ubuntu boxes
-  apt:
-    update_cache: yes
-    force_apt_get: yes
-    cache_valid_time: 3600
 
 - name: Upgrade all packages on servers
   apt:
@@ -42,14 +33,6 @@
     value: "1"
     state: present
     reload: yes
-
-- name: Set Timezone
-  timezone:
-    name: "{{ timezone | default('Australia/Brisbane') }}"
-
-- name: Disable SWAP
-  shell: |
-    swapoff -a
 
 - name: Check if a reboot is needed on all servers
   register: reboot_required_file
@@ -66,3 +49,4 @@
     post_reboot_delay: 30
     test_command: uptime
   when: reboot_required_file.stat.exists
+...

@@ -1,12 +1,12 @@
-- name: Install K3s
-  shell: curl -sfL https://get.k3s.io | sh -
+---
+
+- name: Download & install k3
+  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--flannel-backend=host-gw" sh -s -
   args:
     warn: no
-
-- name: Cluster access
-  shell: export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 - name: Download and Install Helm3
   shell: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
   args:
     warn: no
+...

@@ -1,0 +1,16 @@
+---
+- name:  Create Flux Namespace
+  shell: kubectl apply -f deployments/flux/namespace.yaml
+  args:
+    warn: no
+
+- name:  Add fluxcd repo
+  shell: helm repo add fluxcd https://charts.fluxcd.io
+  args:
+    warn: no
+
+- name:  Add fluxcd repo
+  shell: helm repo add fluxcd https://charts.fluxcd.io
+  args:
+    warn: no
+...

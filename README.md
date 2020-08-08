@@ -27,7 +27,7 @@ sudo apt install ansible
 ## Update
 
 # Step 3 - Run Ansible playbook check
-sudo ansible-playbook main.yml -i inventory -kK --check
+sudo ansible-playbook main.yml -i inventory/hosts.ini -kK --check
 
 SSH password: = k
 BECOME password = -K

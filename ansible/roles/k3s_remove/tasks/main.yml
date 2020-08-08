@@ -1,0 +1,6 @@
+---
+- name:  uinstall k3
+  shell: /usr/local/bin/k3s-uninstall.sh
+  args:
+    warn: no
+...

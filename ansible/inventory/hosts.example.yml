@@ -1,0 +1,19 @@
+# Every YAML file should start with three dashs
+# https://github.com/ansible/ansible/blob/devel/examples/hosts.yaml
+---
+k3s_homelab:
+  hosts:
+    k3s_master:
+  vars:
+    ansible_host: 192.168.0.193
+    ansible_user: "host_username"
+    ansible_ssh_pass: host_ssh_password
+    ansible_sudo_pass: host_ssh_password
+    ansible_become_method: sudo
+    timezone: "Australia/Brisbane"
+    master_ip: "{{ hostvars[groups['k3s_master'][0]]['ansible_host'] | default(groups['k3s_master'][0]) }}"
+    k3s_git_install_path: /home/sadaram
+    k3s_homelab_path: /home/sadaram/k3s_homelab
+
+# Every YAML file should end with three dots
+...

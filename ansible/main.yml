@@ -1,21 +1,18 @@
 ---
 - hosts: k3s_master
-  become: true
   gather_facts: true
+  become: true
+  roles:
+    - role: pre-reqs
+    - role: k3s
+ #   - role: k3s_remove
 
-  vars_files:
-    - vars.yml
-
-  tasks:
-    - include_role:
-        name: pre-reqs
-      tags:
-        - pre-req
-    - include_role:
-        name: system
-      tags:
-        - system
-    - include_role:
-        name: k3s
-    - include_role:
-        name: git
+ # tasks:
+ #   - include_role:
+ #       name: pre-reqs
+ #     tags:
+ #       - pre-req
+ #   - include_role:
+ #       name: k3s
+ #   - include_role:
+ #       name: git
