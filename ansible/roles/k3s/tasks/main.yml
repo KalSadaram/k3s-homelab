@@ -10,6 +10,16 @@
   args:
     warn: no
 
+- name: Create storage class for the cluster
+  shell: kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+    args:
+    warn: no
+
+- name: Install Fluxctl
+  shell: sudo snap install fluxctl --classic
+  args:
+    warn: no
+
 - name: Download and Install Helm3
   shell: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
   args:
