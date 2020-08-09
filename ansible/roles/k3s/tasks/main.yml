@@ -10,9 +10,9 @@
   args:
     warn: no
 
-- name: Create storage class for the cluster
-  shell: kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
-    args:
+- name: Download and Install Helm3
+  shell: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+  args:
     warn: no
 
 - name: Install Fluxctl
@@ -20,8 +20,19 @@
   args:
     warn: no
 
-- name: Download and Install Helm3
-  shell: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+- name: Create flux namespace
+  shell: kubectl apply -f https://raw.githubusercontent.com/kalsadaram/k3s-homelab/deployments/flux/namespace.yaml
   args:
     warn: no
+
+- name: Add fluxcd charts
+  shell: helm repo add fluxcd https://charts.fluxcd.io
+  args:
+    warn: no
+
+- name: update Helm
+  shell: helm repo update
+  args:
+    warn: no
+
 ...
