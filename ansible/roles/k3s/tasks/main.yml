@@ -1,7 +1,12 @@
 ---
 
 - name: Download & install k3
-  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--flannel-backend=host-gw" sh -s -
+  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable servicelb traefik metrics-server --flannel-backend=host-gw" sh -s -
+  args:
+    warn: no
+
+- name: Fix Unable to read /etc/rancher/k3s/k3s.yaml issue
+  shell: sudo chmod -R 777 /etc/rancher/k3s/k3s.yaml
   args:
     warn: no
 

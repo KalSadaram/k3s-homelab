@@ -5,7 +5,7 @@
   roles:
     - role: pre-reqs
     - role: k3s
- #   - role: k3s_remove
+ #   - role: uninstall_k3s
 
  # tasks:
  #   - include_role:
