@@ -1,7 +1,7 @@
 ---
 
 - name: Download & install k3
-  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable servicelb traefik metrics-server --flannel-backend=host-gw" sh -s -
+  shell: curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--node-name {{ hostname }} --flannel-backend=host-gw" sh -s -
   args:
     warn: no
 
@@ -21,7 +21,7 @@
     warn: no
 
 - name: Create flux namespace
-  shell: kubectl apply -f https://raw.githubusercontent.com/kalsadaram/k3s-homelab/deployments/flux/namespace.yaml
+  shell: kubectl apply -f https://raw.githubusercontent.com/{{ GIT_AUTHUSER }}/{{ GIT_REPO_NAME }}/master/deployments/flux/namespace.yaml
   args:
     warn: no
 
@@ -35,4 +35,12 @@
   args:
     warn: no
 
+# Below won't work Manual steps
+# helm upgrade --install flux --values https://raw.githubusercontent.com/kalsadaram/k3s-homelab/master/deployments/flux/flux-values.yaml --namespace flux fluxcd/flux --kubeconfig /etc/rancher/k3s/k3s.yaml
+# kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
+
+#- name: Heml Install
+#  shell: helm upgrade --install flux --values https://raw.githubusercontent.com/{{ GIT_AUTHUSER }}/{{ GIT_REPO_NAME }}/master/deployments/flux/flux-values.yaml --namespace flux fluxcd/flux  --kubeconfig /etc/rancher/k3s/k3s.yaml
+#  args:
+#    warn: no
 ...

@@ -22,11 +22,22 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 
 
-# Step 2 - Update following files
+# Step 2 - Run Ansible playbook check
 
-## Update
+## Set Ansible configuration
 
-# Step 3 - Run Ansible playbook check
+navigate to ansible folder
+ex: cd /ansible
+
+### Set configuration
+export ANSIBLE_CONFIG=ansible.cfg
+
+### check ansible config
+sudo ansible --version
+
+sudo ansible-playbook main.yml --check
+
+
 sudo ansible-playbook main.yml -i inventory/hosts.ini -kK --check
 
 SSH password: = k

@@ -17,6 +17,7 @@ k3s_homelab:
     GIT_AUTHUSER: kalsadaram
     GIT_AUTHKEY: Deploy Token You Generate from your repo
     GIT_REPO_NAME: k3s_homelab
+    hostname: netlab.com.au
 
 # Every YAML file should end with three dots
 ...
